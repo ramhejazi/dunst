@@ -1,0 +1,23 @@
+{
+  "name": "dunst",
+  "version": "0.1.0",
+  "description": "JS wrapper for dunstify (dunst notification daemon)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramhejazi/dunst.git"
+  },
+  "keywords": [
+    "notification",
+    "linux"
+  ],
+  "author": "Ram Hejazi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ramhejazi/dunst/issues"
+  },
+  "homepage": "https://github.com/ramhejazi/dunst#readme"
+}
