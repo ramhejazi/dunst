@@ -1,10 +1,10 @@
 # dunst
 Simple node wrapper for dunstify (dunst notification daemon)
 
-# Installation
+## Installation
 > $ npm i dunst
 
-# Usage
+## Usage
 ``` js 
 const notifier = require('dunst').spawn({
     // dunstify "-r" flag, optional
@@ -28,6 +28,6 @@ notifier.show({
     content: '...'
 })
 ```
-# License 
+## License 
 MIT
 
