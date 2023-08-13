@@ -1,6 +1,6 @@
 const { exec } = require("child_process");
 
-function show({ id, content, type, title }) {
+function show({ id, content, type, title }, raw = false) {
     if (typeof this.formatter === "function") {
         ({id, content, type, title} = this.formatter(arguments[0]));
     }
@@ -10,7 +10,7 @@ function show({ id, content, type, title }) {
     args.push(`"${title || this.title}"`);
     content = content.replace(/"/g, '\\"')
     args.push(`"${content}"`);
-
+    if (raw) return args.join(" ");
     exec(args.join(" "), function (e) {
         if (e) {
             console.error(
