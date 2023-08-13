@@ -13,7 +13,10 @@ const notifier = require('dunst').spawn({
     title: 'my app',
     // optional formatter for manipulating notification's body
     // called before showing notifications
-    formatter: (data) => data.content + ' whatever'
+    formatter(data) { 
+        data.content = '[prefix] ' + data.content;
+        return data;
+    }
 })
 
 notifier.show({
@@ -22,7 +25,7 @@ notifier.show({
     // urgency of notification, dunstify -u flag, optional
     type: 'normal', 
     // overwrite instance title, optional
-    title: 'my app 2'
+    title: 'my app'
     // body of notification, will be passed to optional formatter fn
     // useful for creating pango markup supported by dunst dynamically
     content: '...'
