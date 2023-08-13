@@ -1,7 +1,9 @@
 const { exec } = require("child_process");
 
 function show({ id, content, type, title }) {
-    if (typeof this.formatter === "function") content = this.formatter(content);
+    if (typeof this.formatter === "function") {
+        ({id, content, type, title} = this.formatter(arguments[0]));
+    }
     let args = ["dunstify"];
     if (type) args.push(`-u ${type}`);
     if (id || this.id) args.push("-r " + (id || this.id));
