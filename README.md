@@ -1,5 +1,5 @@
 # dunst
-Simple node wrapper for dunstify (dunst notification daemon)
+Simple node wrapper for dunstify ([dunst notification daemon](https://github.com/dunst-project/dunst))
 
 ## Installation
 > $ npm i dunst
@@ -11,8 +11,10 @@ const notifier = require('dunst').spawn({
     id: 123, 
     // title of the notification
     title: 'my app',
-    // optional formatter for manipulating notification's body
-    // called before showing notifications
+    /* 
+        optional formatter for manipulating notification's body
+        called before showing notifications
+    */ 
     formatter(data) { 
         data.content = '[prefix] ' + data.content;
         return data;
@@ -26,8 +28,11 @@ notifier.show({
     type: 'normal', 
     // overwrite instance title, optional
     title: 'my app'
-    // body of notification, will be passed to optional formatter fn
-    // useful for creating pango markup supported by dunst dynamically
+
+    /* 
+        body of notification, will be passed to optional formatter function.
+        useful for creating pango markup supported by dunst
+    */ 
     content: '...'
 })
 ```
